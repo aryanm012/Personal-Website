@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Footer } from "@/components/Footer";
 import { Navbar } from "@/components/Navbar";
+import { SpaceBackdrop } from "@/components/SpaceBackdrop";
 import { profile } from "@/data/profile";
 import "./globals.css";
 
@@ -18,12 +19,14 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className="antialiased">
       <body className="font-sans">
-        <div className="ambient-background" aria-hidden="true" />
-        <a className="skip-link" href="#main-content">Skip to content</a>
-        <div id="top" />
-        <Navbar />
-        <main id="main-content" tabIndex={-1}>{children}</main>
-        <Footer />
+        <div className="site-content">
+          <a className="skip-link" href="#main-content">Skip to content</a>
+          <div id="top" />
+          <Navbar />
+          <main id="main-content" tabIndex={-1}>{children}</main>
+          <Footer />
+        </div>
+        <SpaceBackdrop />
       </body>
     </html>
   );
