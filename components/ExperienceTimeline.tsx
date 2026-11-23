@@ -38,28 +38,38 @@ export function ExperienceTimeline({ children }: { children: ReactNode }) {
 
   return (
     <>
-      <div className="timeline-header" data-reveal>
+      <div
+        className="timeline-header"
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          alignItems: "center",
+          gap: "0.65rem",
+          marginBottom: "1rem",
+        }}
+        data-reveal
+      >
         <h2 className="section-title" id="experience-title">Experience</h2>
-        <div className="timeline-controls">
+        <div className="timeline-navigation" style={{ display: "flex", gap: "0.5rem", marginInlineStart: "auto" }}>
           <button
-            className="button button-outline"
+            className="button button-outline timeline-scroll-button"
             type="button"
             aria-controls="experience-timeline"
-            aria-label="Previous experience entries"
+            aria-label="Scroll to earlier experience"
             disabled={!canGoBack}
             onClick={() => move(-1)}
           >
-            Previous
+            <span aria-hidden="true">←</span>
           </button>
           <button
-            className="button button-outline"
+            className="button button-outline timeline-scroll-button"
             type="button"
             aria-controls="experience-timeline"
-            aria-label="Next experience entries"
+            aria-label="Scroll to later experience"
             disabled={!canGoForward}
             onClick={() => move(1)}
           >
-            Next
+            <span aria-hidden="true">→</span>
           </button>
         </div>
       </div>
@@ -69,6 +79,7 @@ export function ExperienceTimeline({ children }: { children: ReactNode }) {
         aria-label="Experience timeline"
         tabIndex={0}
         ref={trackRef}
+        style={{ scrollbarWidth: "none" }}
         onScroll={updateControls}
         data-reveal
       >

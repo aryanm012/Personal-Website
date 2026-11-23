@@ -3,7 +3,7 @@ import { profile, skills } from "@/data/profile";
 export function About() {
   return (
     <section className="site-container page-section section-split" id="about" aria-labelledby="about-title">
-      <h2 className="section-title" id="about-title" data-reveal>About</h2>
+      <h2 className="section-title self-center" id="about-title" data-reveal>About</h2>
       <div className="about-content">
         <div className="about-copy" data-reveal>
           <p>

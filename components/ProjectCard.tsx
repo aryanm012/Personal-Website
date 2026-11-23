@@ -1,31 +1,40 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { Project } from "@/data/projects";
 import { TechnologyTags } from "./TechnologyTags";
 
 export function ProjectCard({ project }: { project: Project }) {
+  const { featured, title, slug, area, context, result, technologies, repository } = project;
+  const thumbnail = featured?.thumbnail;
+
   return (
     <article className="project-card" data-reveal>
+      {thumbnail && (
+        <Image
+          className="project-thumbnail"
+          src={thumbnail.src}
+          alt={thumbnail.alt}
+          width={thumbnail.width}
+          height={thumbnail.height}
+          sizes="(min-width: 64rem) 335px, (min-width: 36rem) 50vw, 100vw"
+          style={{ objectFit: thumbnail.fit }}
+        />
+      )}
       <div className="project-meta">
-        <span className="eyebrow">{project.area}</span>
-        {project.context && <span>{project.context}</span>}
+        <span className="eyebrow">{area}</span>
+        {context && <span>{context}</span>}
       </div>
-      <h3>{project.title}</h3>
-      <p>{project.summary}</p>
-      {project.result && <p className="project-result">{project.result}</p>}
+      <h3>{title}</h3>
+      <p className="project-summary">{featured?.summary ?? project.summary}</p>
+      {result && <p className="project-result">{result}</p>}
       <div className="project-footer">
-        <TechnologyTags technologies={project.technologies} />
+        <TechnologyTags technologies={technologies} />
         <div className="project-links">
-          <Link
-            className="text-link"
-            href={`/projects/${project.slug}`}
-            aria-label={`View project: ${project.title}`}
-          >
+          <Link className="text-link" href={`/projects/${slug}`} aria-label={`View project: ${title}`}>
             View project
           </Link>
-          {project.repository && (
-            <a className="text-link" href={project.repository} aria-label={`${project.title} on GitHub`}>
-              GitHub
-            </a>
+          {repository && (
+            <a className="text-link" href={repository} aria-label={`${title} on GitHub`}>GitHub</a>
           )}
         </div>
       </div>

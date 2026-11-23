@@ -7,6 +7,16 @@ export type Project = {
   summary: string;
   technologies: string[];
   details: DetailSection[];
+  featured?: {
+    summary: string;
+    thumbnail?: {
+      src: string;
+      alt: string;
+      width: number;
+      height: number;
+      fit?: "contain" | "cover";
+    };
+  };
   context?: string;
   experienceSlug?: string;
   result?: string;
@@ -20,6 +30,15 @@ export const projects: Project[] = [
     area: "Applied AI",
     summary:
       "Built a claims assistant that coordinates agents for benefits analysis, claims tracking, and issue resolution. Unresolved cases go to a representative with a generated summary.",
+    featured: {
+      summary: "Built a multi-agent assistant that analyzes benefits, tracks claims, and hands unresolved cases to a representative.",
+      thumbnail: {
+        src: "/images/odyssey-dashboard.png",
+        alt: "Odyssey Dashboard member overview with claims, plan benefits, and the Odyssey AI panel",
+        width: 1672,
+        height: 941,
+      },
+    },
     result: "Resolved 74% of 215 test cases without escalation.",
     technologies: ["Python", "Google ADK", "React"],
     repository: "https://github.com/aryanm012/Odyssey-Dashboard-",
@@ -46,6 +65,16 @@ export const projects: Project[] = [
     experienceSlug: "humana",
     summary:
       "Helped build a full-stack enrollment workflow and designed event-driven synchronization to separate user-facing queries from background data processing.",
+    featured: {
+      summary: "Helped speed up enrollment queries by using Kafka to update a dedicated MongoDB read model.",
+      thumbnail: {
+        src: "/images/enrollment-platform-architecure.png",
+        alt: "Enrollment architecture with a React frontend, a .NET API, and Kafka events feeding MongoDB and Azure analytics",
+        width: 1448,
+        height: 1086,
+        fit: "cover",
+      },
+    },
     technologies: ["React", ".NET", "Kafka", "MongoDB"],
     details: [
       {
@@ -70,8 +99,28 @@ export const projects: Project[] = [
     experienceSlug: "mitsubishi",
     summary:
       "Helped build a document workflow with semantic search. The ingestion pipeline prepared documents for indexing, and retrieval respected document-level permissions.",
+    featured: {
+      summary: "Helped users find relevant NDA passages faster with semantic search that respects document permissions.",
+      thumbnail: {
+        src: "/images/docms-document-qa-thumbnail.png",
+        alt: "DocMS question-and-answer interface showing an NDA response with a linked source",
+        width: 1996,
+        height: 1320,
+        fit: "cover",
+      },
+    },
     technologies: ["Next.js", "FastAPI", "AWS"],
     details: [
+      {
+        heading: "Architecture",
+        body: "AWS Lambda ingests NDAs from SharePoint and indexes passages in an Amazon Bedrock knowledge base. When a user asks a question, DocMS retrieves passages, checks document access through Microsoft Graph, and streams an answer with sources.",
+        image: {
+          src: "/images/docms-document-qa-arch.png",
+          alt: "DocMS architecture diagram showing separate indexing and document query flows",
+          width: 1440,
+          height: 810,
+        },
+      },
       {
         heading: "Preparing documents for search",
         body: "I worked on a serverless ingestion flow that split long documents into smaller passages and indexed their embeddings. Passage-level retrieval helped surface relevant sections of a document even when a query used different wording.",
@@ -94,6 +143,16 @@ export const projects: Project[] = [
     experienceSlug: "university-of-maryland",
     summary:
       "Studied how control barrier functions can use a mathematical definition of safe states to constrain a robot’s control inputs.",
+    featured: {
+      summary: "Studied how control barrier functions constrain robot motion to stay within mathematically defined safety limits.",
+      thumbnail: {
+        src: "/images/robotics-safety-research.png",
+        alt: "Simulated robotic arm holding a blue block beside two orange obstacles",
+        width: 3837,
+        height: 2094,
+        fit: "cover",
+      },
+    },
     technologies: ["Control barrier functions", "Robotics"],
     details: [
       {
@@ -112,6 +171,15 @@ export const projects: Project[] = [
     area: "Machine learning",
     summary:
       "Trained and tuned a random forest to predict 20-day price movements using historical data and engineered technical indicators.",
+    featured: {
+      summary: "Trained a random forest to predict 20-day stock price direction from historical prices and technical indicators.",
+      thumbnail: {
+        src: "/images/stock-movement-prediction.png",
+        alt: "Illustration of a stock price line dipping before rising",
+        width: 1672,
+        height: 941,
+      },
+    },
     result: "Improved evaluation accuracy from 56% to 75.1%.",
     technologies: ["Python", "Pandas", "scikit-learn"],
     repository: "https://github.com/jli433/FAANG_Monthly_Stock_Prediction",

@@ -5,26 +5,62 @@ type ExperienceEntry = {
   organization: string;
   role: string;
   dates?: string;
+  hideFromTimeline?: boolean;
   summary?: string;
   details?: DetailSection[];
 };
 
+// Timeline entries are listed in ascending start-date order.
 export const experience: ExperienceEntry[] = [
   {
-    slug: "booz-allen-hamilton",
-    organization: "Booz Allen Hamilton",
-    role: "Software Engineer",
-    dates: "Sep 2026 – Present",
+    slug: "university-of-maryland",
+    organization: "University of Maryland",
+    role: "Robotics Research",
+    hideFromTimeline: true,
     summary:
-      "Built integrations for retrieving infrastructure telemetry and a full-stack interface for configuring and managing monitors.",
+      "Explored how control barrier functions can encode safety constraints for robotic systems.",
     details: [
       {
-        heading: "Observability integrations",
-        body: "I built a Datadog API client that made infrastructure telemetry and monitor data available programmatically. I also exposed selected operations through an agent tool interface so troubleshooting workflows could use the same integrations.",
+        heading: "Robotics safety",
+        body: "I explored how a mathematical safety constraint can inform the inputs a robot controller is allowed to choose. The research connected the definition of a safe state to the decisions a controller makes as the robot moves.",
+      },
+    ],
+  },
+  {
+    slug: "ecolab",
+    organization: "Ecolab",
+    role: "Software Engineering Intern",
+    dates: "Jun – Aug 2025",
+    summary:
+      "Built an OCR workflow to turn chromatography reports into structured data and reduce manual entry.",
+    details: [
+      {
+        heading: "Digitizing historical runs",
+        body: "I built a pipeline to extract data from existing chromatography reports with optical character recognition. The workflow converted information that previously needed manual transcription into structured records.",
+      },
+    ],
+  },
+  {
+    slug: "easy-dynamics",
+    organization: "Easy Dynamics",
+    role: "IT Intern",
+    dates: "Jan – Feb 2026",
+  },
+  {
+    slug: "mitsubishi",
+    organization: "Mitsubishi",
+    role: "AI Software Engineer",
+    dates: "Feb – May 2026",
+    summary:
+      "Worked on document management and semantic search, from ingestion and indexing to retrieval that respected document permissions.",
+    details: [
+      {
+        heading: "Document workflows",
+        body: "I helped build a Next.js and FastAPI application that brought document management and search into the same workflow. My work connected the application to serverless document ingestion and semantic indexing.",
       },
       {
-        heading: "Monitor management",
-        body: "I worked across TanStack Start, FastAPI, and AWS RDS to build an interface for managing monitors. The workflow validated configurations before saving them and applying changes through the Datadog API.",
+        heading: "Access-aware retrieval",
+        body: "I worked on the retrieval layer that scored relevant passages and checked document-level access. This let the app surface useful text within the permissions already in place.",
       },
     ],
   },
@@ -47,52 +83,20 @@ export const experience: ExperienceEntry[] = [
     ],
   },
   {
-    slug: "mitsubishi",
-    organization: "Mitsubishi",
-    role: "AI Software Engineer",
-    dates: "Feb – May 2026",
+    slug: "booz-allen-hamilton",
+    organization: "Booz Allen Hamilton",
+    role: "Software Engineer",
+    dates: "Sep 2026 – Present",
     summary:
-      "Worked on document management and semantic search, from ingestion and indexing to retrieval that respected document permissions.",
+      "Built integrations for retrieving infrastructure telemetry and a full-stack interface for configuring and managing monitors.",
     details: [
       {
-        heading: "Document workflows",
-        body: "I helped build a Next.js and FastAPI application that brought document management and search into the same workflow. My work connected the application to serverless document ingestion and semantic indexing.",
+        heading: "Observability integrations",
+        body: "I built a Datadog API client that made infrastructure telemetry and monitor data available programmatically. I also exposed selected operations through an agent tool interface so troubleshooting workflows could use the same integrations.",
       },
       {
-        heading: "Access-aware retrieval",
-        body: "I worked on the retrieval layer that scored relevant passages and checked document-level access. This let the app surface useful text within the permissions already in place.",
-      },
-    ],
-  },
-  {
-    slug: "ecolab",
-    organization: "Ecolab",
-    role: "Software Engineering Intern",
-    dates: "Jun – Aug 2025",
-    summary:
-      "Built an OCR workflow to turn chromatography reports into structured data and reduce manual entry.",
-    details: [
-      {
-        heading: "Digitizing historical runs",
-        body: "I built a pipeline to extract data from existing chromatography reports with optical character recognition. The workflow converted information that previously needed manual transcription into structured records.",
-      },
-    ],
-  },
-  {
-    slug: "easy-dynamics",
-    organization: "Easy Dynamics",
-    role: "IT Intern",
-  },
-  {
-    slug: "university-of-maryland",
-    organization: "University of Maryland",
-    role: "Robotics Research",
-    summary:
-      "Explored how control barrier functions can encode safety constraints for robotic systems.",
-    details: [
-      {
-        heading: "Robotics safety",
-        body: "I explored how a mathematical safety constraint can inform the inputs a robot controller is allowed to choose. The research connected the definition of a safe state to the decisions a controller makes as the robot moves.",
+        heading: "Monitor management",
+        body: "I worked across TanStack Start, FastAPI, and AWS RDS to build an interface for managing monitors. The workflow validated configurations before saving them and applying changes through the Datadog API.",
       },
     ],
   },

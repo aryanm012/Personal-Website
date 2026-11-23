@@ -6,7 +6,7 @@ export function Experience() {
   return (
     <section className="site-container page-section" id="experience" aria-labelledby="experience-title">
       <ExperienceTimeline>
-        {experience.map(({ slug, organization, role, dates }) => (
+        {experience.filter(({ hideFromTimeline }) => !hideFromTimeline).map(({ slug, organization, role, dates }) => (
           <li className="timeline-item" key={slug}>
             <Link
               className="timeline-link"

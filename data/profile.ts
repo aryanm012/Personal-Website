@@ -15,14 +15,14 @@ export const profile = {
 export const skills = [
   {
     category: "Languages",
-    items: ["Python", "TypeScript", "Java", "C#", "SQL", "C"],
+    items: ["Python", "Java", "TypeScript", "JavaScript", "C#", "SQL", "C"],
   },
   {
-    category: "Backend & data",
-    items: ["FastAPI", "Node.js", ".NET", "Kafka", "PostgreSQL", "MongoDB"],
+    category: "Frameworks",
+    items: ["React", "Next.js", "Node.js", "Express", "FastAPI", ".NET", "TanStack Start"],
   },
   {
-    category: "Frontend & cloud",
-    items: ["React", "Next.js", "AWS", "Docker"],
+    category: "Databases & Cloud",
+    items: ["PostgreSQL", "MongoDB", "Kafka", "AWS (Lambda, RDS, Bedrock)", "Docker", "Git", "Linux"],
   },
 ];

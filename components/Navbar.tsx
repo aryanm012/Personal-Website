@@ -5,7 +5,6 @@ const navigation = [
   { href: "/#experience", label: "Experience" },
   { href: "/#projects", label: "Projects" },
   { href: "/#about", label: "About" },
-  { href: "#contact", label: "Contact" },
 ];
 
 export function Navbar() {
@@ -20,6 +19,7 @@ export function Navbar() {
           {navigation.map(({ href, label }) => (
             <Link key={href} href={href}>{label}</Link>
           ))}
+          <a href="#contact">Contact</a>
         </nav>
         <a className="button button-outline header-resume" href={profile.resume} download>
           Résumé

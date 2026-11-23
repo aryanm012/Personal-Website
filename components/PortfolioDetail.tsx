@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import type { DetailSection } from "@/data/detail";
@@ -41,10 +42,21 @@ export function PortfolioDetail({
           {summary && <p className="detail-summary">{summary}</p>}
           {children}
         </header>
-        {sections?.map(({ heading, body }) => (
+        {sections?.map(({ heading, body, image }) => (
           <section className="detail-section" key={heading} data-reveal>
             <h2>{heading}</h2>
             <p>{body}</p>
+            {image && (
+              <a className="detail-section-image" href={image.src} aria-label={`View full-size ${image.alt}`}>
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  width={image.width}
+                  height={image.height}
+                  sizes="(min-width: 54rem) 48rem, 100vw"
+                />
+              </a>
+            )}
           </section>
         ))}
         {related.length > 0 && (
