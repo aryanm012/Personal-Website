@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { PortfolioDetail } from "@/components/PortfolioDetail";
+import { ProjectCaseStudy } from "@/components/ProjectCaseStudy";
 import { TechnologyTags } from "@/components/TechnologyTags";
 import { experience } from "@/data/experience";
 import { projects } from "@/data/projects";
@@ -26,15 +27,24 @@ export async function generateMetadata({ params }: PageProps<"/projects/[slug]">
 export default async function ProjectPage({ params }: PageProps<"/projects/[slug]">) {
   const project = getProject((await params).slug);
   const role = experience.find((entry) => entry.slug === project.experienceSlug);
+  const label = project.context ? `${project.area} · ${project.context}` : project.area;
+  const related = role && !role.projectHref
+    ? { href: `/experience/${role.slug}`, label: `Experience at ${role.organization}` }
+    : undefined;
+
+  if (project.caseStudy) {
+    return <ProjectCaseStudy {...project} label={label} related={related} />;
+  }
 
   return (
     <PortfolioDetail
       back={{ href: "/#projects", label: "Back to projects" }}
-      label={project.context ? `${project.area} · ${project.context}` : project.area}
+      label={label}
       title={project.title}
       summary={project.summary}
       sections={project.details}
-      related={role && [{ href: `/experience/${role.slug}`, label: `Experience at ${role.organization}` }]}
+      documents={project.documents}
+      related={related && [related]}
     >
       {project.result && <p className="detail-result">{project.result}</p>}
       <TechnologyTags technologies={project.technologies} />

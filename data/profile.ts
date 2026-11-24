@@ -20,7 +20,7 @@ export const profile = {
       "Functional Programming",
       "Application of Linear Algebra",
       "Applied Probability",
-      "Web Design",
+      "Web Development",
     ],
   },
 };

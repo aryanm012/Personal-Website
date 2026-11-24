@@ -1,0 +1,38 @@
+.documents {
+  display: grid;
+  gap: 1.15rem;
+  margin-top: 1rem;
+}
+
+.document {
+  min-width: 0;
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  background: var(--surface);
+}
+
+.documentHeader {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0 0.85rem;
+  padding: 0.25rem 1rem;
+}
+
+.documentHeader h3 {
+  font-weight: 600;
+}
+
+.documentHeader a {
+  gap: 0.35rem;
+}
+
+.document iframe {
+  display: block;
+  width: 100%;
+  height: clamp(23rem, 72vh, 45rem);
+  border-top: 1px solid var(--border);
+  border-radius: 0 0 0.75rem 0.75rem;
+  background: var(--background);
+}

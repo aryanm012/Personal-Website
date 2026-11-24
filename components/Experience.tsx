@@ -6,11 +6,11 @@ export function Experience() {
   return (
     <section className="site-container page-section" id="experience" aria-labelledby="experience-title">
       <ExperienceTimeline>
-        {experience.filter(({ hideFromTimeline }) => !hideFromTimeline).map(({ slug, organization, role, dates }) => (
+        {experience.filter(({ hideFromTimeline }) => !hideFromTimeline).map(({ slug, organization, role, dates, projectHref }) => (
           <li className="timeline-item" key={slug}>
             <Link
               className="timeline-link"
-              href={`/experience/${slug}`}
+              href={projectHref ? { pathname: projectHref, query: { from: "experience" } } : `/experience/${slug}`}
               aria-labelledby={`${slug}-organization ${slug}-role`}
             >
               {dates && <p className="timeline-date">{dates}</p>}

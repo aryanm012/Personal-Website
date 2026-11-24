@@ -24,19 +24,18 @@ export function ProjectCard({ project }: { project: Project }) {
         <span className="eyebrow">{area}</span>
         {context && <span>{context}</span>}
       </div>
-      <h3>{title}</h3>
+      <h3>
+        <Link className="project-card-link" href={`/projects/${slug}`}>
+          {title}
+        </Link>
+      </h3>
       <p className="project-summary">{featured?.summary ?? project.summary}</p>
       {result && <p className="project-result">{result}</p>}
       <div className="project-footer">
         <TechnologyTags technologies={technologies} />
-        <div className="project-links">
-          <Link className="text-link" href={`/projects/${slug}`} aria-label={`View project: ${title}`}>
-            View project
-          </Link>
-          {repository && (
-            <a className="text-link" href={repository} aria-label={`${title} on GitHub`}>GitHub</a>
-          )}
-        </div>
+        {repository && featured?.showRepository !== false && (
+          <a className="text-link project-repository" href={repository} aria-label={`${title} on GitHub`}>GitHub</a>
+        )}
       </div>
     </article>
   );

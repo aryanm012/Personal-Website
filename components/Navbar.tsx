@@ -2,7 +2,7 @@ import Link from "next/link";
 import { profile } from "@/data/profile";
 
 const navigation = [
-  { href: "/#about", label: "Who Am I?" },
+  { href: "/#about", label: "About" },
   { href: "/#experience", label: "Experience" },
   { href: "/#projects", label: "Projects" },
   { href: "/#education", label: "Education" },

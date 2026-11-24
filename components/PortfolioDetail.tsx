@@ -1,8 +1,9 @@
-import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
-import type { DetailSection } from "@/data/detail";
+import type { DetailDocument, DetailSection } from "@/data/detail";
+import { DetailFigure } from "./DetailFigure";
 import { PageMotion } from "./PageMotion";
+import { ResearchMaterials } from "./ResearchMaterials";
 
 type DetailLink = {
   href: string;
@@ -16,6 +17,7 @@ type PortfolioDetailProps = {
   dates?: string;
   summary?: string;
   sections?: DetailSection[];
+  documents?: DetailDocument[];
   related?: DetailLink[];
   children?: ReactNode;
 };
@@ -27,6 +29,7 @@ export function PortfolioDetail({
   dates,
   summary,
   sections,
+  documents = [],
   related = [],
   children,
 }: PortfolioDetailProps) {
@@ -45,20 +48,19 @@ export function PortfolioDetail({
         {sections?.map(({ heading, body, image }) => (
           <section className="detail-section" key={heading} data-reveal>
             <h2>{heading}</h2>
-            <p>{body}</p>
-            {image && (
-              <a className="detail-section-image" href={image.src} aria-label={`View full-size ${image.alt}`}>
-                <Image
-                  src={image.src}
-                  alt={image.alt}
-                  width={image.width}
-                  height={image.height}
-                  sizes="(min-width: 54rem) 48rem, 100vw"
-                />
-              </a>
+            {typeof body === "string" ? (
+              <p>{body}</p>
+            ) : (
+              <ul className="tags detail-section-list" role="list">
+                {body.map((item) => <li key={item}>{item}</li>)}
+              </ul>
             )}
+            {image && <DetailFigure image={image} />}
           </section>
         ))}
+        {documents.length > 0 && (
+          <ResearchMaterials documents={documents} className="detail-section" />
+        )}
         {related.length > 0 && (
           <nav className="detail-related" aria-label="Related work" data-reveal>
             {related.map(({ href, label }) => (

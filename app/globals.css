@@ -488,6 +488,10 @@ a {
   color: var(--muted);
 }
 
+.detail-section-list {
+  margin-top: 0.75rem;
+}
+
 .detail-section-image {
   display: block;
   margin-top: 1rem;
@@ -499,6 +503,12 @@ a {
   width: 100%;
   height: auto;
   border-radius: inherit;
+}
+
+.detail-section figcaption {
+  margin-top: 0.5rem;
+  color: var(--secondary);
+  font-size: 0.875rem;
 }
 
 .detail-related {
