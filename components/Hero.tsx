@@ -6,12 +6,7 @@ export function Hero() {
       <p className="eyebrow">Software engineer</p>
       <h1 id="hero-title">{profile.name}<span aria-hidden="true">.</span></h1>
       <p className="hero-intro">
-        I build backend systems and applied AI.
-      </p>
-      <p className="hero-description">
-        I study computer science and mathematics at the University of Maryland.
-        I’m interested in how distributed systems move data and how AI can make
-        that data useful.
+        Building systems that solve real problems.
       </p>
       <div className="hero-actions">
         <a className="button button-primary" href="#projects">View projects</a>

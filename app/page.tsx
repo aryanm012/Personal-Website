@@ -1,4 +1,5 @@
 import { About } from "@/components/About";
+import { Education } from "@/components/Education";
 import { Experience } from "@/components/Experience";
 import { Hero } from "@/components/Hero";
 import { PageMotion } from "@/components/PageMotion";
@@ -9,9 +10,10 @@ export default function Home() {
     <>
       <PageMotion />
       <Hero />
+      <About />
       <Experience />
       <Projects />
-      <About />
+      <Education />
     </>
   );
 }

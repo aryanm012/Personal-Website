@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { projects } from "@/data/projects";
 import { ProjectCard } from "./ProjectCard";
+import { SectionHeading } from "./SectionHeading";
 import "./Projects.css";
 
 export function Projects() {
@@ -10,7 +11,7 @@ export function Projects() {
   return (
     <section className="site-container page-section" id="projects" aria-labelledby="projects-title">
       <div className="projects-content">
-        <h2 className="section-title" id="projects-title" data-reveal>Projects</h2>
+        <SectionHeading id="projects-title" label="Portfolio" title="Projects" />
         {featured.length > 0 && (
           <div className="project-grid">
             {featured.map((project) => <ProjectCard key={project.slug} project={project} />)}

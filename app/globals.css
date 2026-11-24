@@ -200,8 +200,7 @@ a {
 }
 
 .eyebrow,
-.timeline-date,
-.education-date {
+.timeline-date {
   font-family: var(--font-mono);
   font-size: 0.875rem;
 }
@@ -233,14 +232,6 @@ a {
   line-height: 1.25;
 }
 
-.hero-description {
-  max-width: 36rem;
-  margin-top: 0.85rem;
-  color: var(--muted);
-  font-size: 1.05rem;
-  line-height: 1.7;
-}
-
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
@@ -269,9 +260,7 @@ a {
   line-height: 1.1;
 }
 
-.timeline-link h3,
-.education h3,
-.skills h3 {
+.timeline-link h3 {
   font-size: clamp(1.25rem, 2.4vw, 1.55rem);
   font-weight: 600;
   letter-spacing: -0.04em;
@@ -309,12 +298,6 @@ a {
 
 .text-link:hover {
   color: #e8dfff;
-}
-
-.section-split {
-  display: grid;
-  grid-template-columns: minmax(12rem, 1fr) minmax(0, 2.1fr);
-  gap: 2rem 3rem;
 }
 
 .timeline-scroll-button {
@@ -439,8 +422,7 @@ a {
   background: var(--accent);
 }
 
-.timeline-date,
-.education-date {
+.timeline-date {
   color: var(--secondary);
 }
 
@@ -525,52 +507,6 @@ a {
   gap: 0 1.25rem;
 }
 
-.about-content {
-  display: grid;
-  gap: 1.5rem;
-}
-
-.about-copy p + p {
-  margin-top: 0.8rem;
-}
-
-.about-copy p,
-.education p,
-.skills dd {
-  color: var(--muted);
-}
-
-.education {
-  border: 1px solid var(--border);
-  border-radius: 0.9rem;
-  background: var(--surface);
-  padding: 1.15rem 1.3rem;
-}
-
-.education p {
-  margin-top: 0.35rem;
-}
-
-.education .education-date {
-  color: var(--secondary);
-}
-
-.skills dl {
-  display: grid;
-  gap: 0.65rem 1rem;
-  margin-top: 0.65rem;
-}
-
-.skills dl div {
-  display: grid;
-  grid-template-columns: minmax(8rem, 0.65fr) 2fr;
-  gap: 0.25rem 0.8rem;
-}
-
-.skills dt {
-  font-weight: 550;
-}
-
 @media (max-width: 760px) {
   html {
     scroll-padding-top: 7.5rem;
@@ -592,16 +528,6 @@ a {
 
   .hero h1 {
     font-size: clamp(2.8rem, 9.8vw, 4.8rem);
-  }
-
-  .section-split {
-    grid-template-columns: minmax(0, 1fr);
-  }
-}
-
-@media (max-width: 420px) {
-  .skills dl div {
-    grid-template-columns: 1fr;
   }
 }
 

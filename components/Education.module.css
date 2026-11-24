@@ -1,0 +1,105 @@
+.content {
+  max-width: 64rem;
+  margin-inline: auto;
+}
+
+.card {
+  --education-inset: clamp(1.1rem, 4vw, 2.5rem);
+  margin-top: clamp(1.65rem, 4vw, 3.75rem);
+  border: 1px solid var(--border);
+  border-radius: 0.9rem;
+  background: var(--surface);
+}
+
+.school {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem 2rem;
+  border-bottom: 1px solid var(--border);
+  border-radius: 0.9rem 0.9rem 0 0;
+  background: color-mix(in srgb, var(--surface), var(--accent) 5%);
+  padding: var(--education-inset);
+}
+
+.school h3 {
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+  font-weight: 620;
+  letter-spacing: -0.04em;
+  line-height: 1.2;
+}
+
+.school p {
+  margin-top: 0.65rem;
+  color: var(--muted);
+  font: 0.9rem / 1.6 var(--font-mono);
+}
+
+.graduation dt,
+.label {
+  color: var(--secondary);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.graduation dd {
+  color: var(--accent);
+  font-size: 1.2rem;
+  font-weight: 650;
+}
+
+.details {
+  display: grid;
+  gap: clamp(1.35rem, 3vw, 2.25rem);
+  padding: var(--education-inset);
+}
+
+.label {
+  margin-bottom: 0.85rem;
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.badge {
+  display: inline-flex;
+  min-height: 2rem;
+  align-items: center;
+  border: 1px solid var(--border);
+  border-radius: 0.35rem;
+  background: var(--background);
+  padding: 0.25rem 0.65rem;
+  color: var(--muted);
+  font: 0.85rem / 1.4 var(--font-mono);
+}
+
+a.badge {
+  text-decoration: underline;
+  text-decoration-color: var(--secondary);
+  text-underline-offset: 0.2em;
+}
+
+a.badge:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  text-decoration-color: currentColor;
+}
+
+.gpa {
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--border));
+  background: color-mix(in srgb, var(--accent) 12%, var(--surface));
+  color: var(--accent);
+}
+
+@media (min-width: 42rem) {
+  .graduation {
+    margin-inline-start: auto;
+    text-align: end;
+  }
+}

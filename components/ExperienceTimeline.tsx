@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState, type ReactNode } from "react";
+import { SectionHeading } from "./SectionHeading";
 
 export function ExperienceTimeline({ children }: { children: ReactNode }) {
   const trackRef = useRef<HTMLOListElement>(null);
@@ -47,10 +48,9 @@ export function ExperienceTimeline({ children }: { children: ReactNode }) {
           gap: "0.65rem",
           marginBottom: "1rem",
         }}
-        data-reveal
       >
-        <h2 className="section-title" id="experience-title">Experience</h2>
-        <div className="timeline-navigation" style={{ display: "flex", gap: "0.5rem", marginInlineStart: "auto" }}>
+        <SectionHeading id="experience-title" label="Career" title="Experience" />
+        <div className="timeline-navigation" style={{ display: "flex", gap: "0.5rem", marginInlineStart: "auto" }} data-reveal>
           <button
             className="button button-outline timeline-scroll-button"
             type="button"

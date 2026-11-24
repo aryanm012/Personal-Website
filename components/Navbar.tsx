@@ -2,9 +2,10 @@ import Link from "next/link";
 import { profile } from "@/data/profile";
 
 const navigation = [
+  { href: "/#about", label: "Who Am I?" },
   { href: "/#experience", label: "Experience" },
   { href: "/#projects", label: "Projects" },
-  { href: "/#about", label: "About" },
+  { href: "/#education", label: "Education" },
 ];
 
 export function Navbar() {

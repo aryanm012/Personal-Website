@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className="antialiased">
+    <html lang="en" className="antialiased" style={{ zoom: 0.88 }}>
       <body className="font-sans">
         <div className="site-content">
           <a className="skip-link" href="#main-content">Skip to content</a>
