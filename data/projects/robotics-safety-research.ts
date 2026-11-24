@@ -12,7 +12,6 @@ export const roboticsSafetyResearch = {
   title: "Robotics Safety Research",
   area: "Controls research",
   context: "University of Maryland",
-  experienceSlug: "university-of-maryland",
   summary:
     "Implemented a safety-critical controller that uses quadratic programming to guide a robot toward a target while enforcing safety constraints.",
   featured: {

@@ -16,20 +16,6 @@ type ExperienceEntry = {
 // Timeline entries are listed in ascending start-date order.
 export const experience: ExperienceEntry[] = [
   {
-    slug: "university-of-maryland",
-    organization: "University of Maryland",
-    role: "Robotics Research",
-    hideFromTimeline: true,
-    summary:
-      "Explored how control barrier functions can encode safety constraints for robotic systems.",
-    details: [
-      {
-        heading: "Robotics safety",
-        body: "I explored how a mathematical safety constraint can inform the inputs a robot controller is allowed to choose. The research connected the definition of a safe state to the decisions a controller makes as the robot moves.",
-      },
-    ],
-  },
-  {
     slug: "ecolab",
     organization: "Ecolab",
     role: "Software Engineering Intern",
