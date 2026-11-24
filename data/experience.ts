@@ -121,17 +121,6 @@ export const experience: ExperienceEntry[] = [
     organization: "Booz Allen Hamilton",
     role: "Software Engineer",
     dates: "Sep 2026 – Present",
-    summary:
-      "Built integrations for retrieving infrastructure telemetry and a full-stack interface for configuring and managing monitors.",
-    details: [
-      {
-        heading: "Observability integrations",
-        body: "I built a Datadog API client that made infrastructure telemetry and monitor data available programmatically. I also exposed selected operations through an agent tool interface so troubleshooting workflows could use the same integrations.",
-      },
-      {
-        heading: "Monitor management",
-        body: "I worked across TanStack Start, FastAPI, and AWS RDS to build an interface for managing monitors. The workflow validated configurations before saving them and applying changes through the Datadog API.",
-      },
-    ],
+    projectHref: "/projects/datadog-operations-assistant",
   },
 ];
